@@ -22,6 +22,10 @@
 */
 
 //CODE HERE
+const greetUser = (username) => {
+    console.log(`Welcome back, ${username}`)
+}
+greetUser('Brennen')
 
 
 
