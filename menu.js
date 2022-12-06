@@ -31,6 +31,14 @@
 */
 
 //CODE HERE
+const pizza = {
+    name: 'Pepperoni',
+    price: 10,
+    category: 'Entree',
+    popularity: 7.5,
+    rating: 9,
+    tags: ['kids', 'most liked']
+}
 
 
 
@@ -43,6 +51,7 @@
 */
 
 //CODE HERE
+console.log(pizza.popularity)
 
 
 /*
@@ -53,6 +62,7 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[1])
 
 
 /*
@@ -63,6 +73,8 @@
 */
 
 //CODE HERE
+delete pizza.price
+console.log(pizza.price)
 
 
 /*
@@ -73,6 +85,8 @@
 */
 
 //CODE HERE
+let {category} = pizza
+console.log(category)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,6 +102,33 @@
 */
 
 //CODE HERE
+// let foodArr = ['type', 'price', 'category', 'popularity', 'rating']
+let foodArr =[
+    {
+        type: 'Cheese',
+        price: 10,
+        category: 'Appetizer',
+        popularity: 7.5,
+        rating: 6,
+        tags: ['dairy', 'good']
+    },
+    {
+        type: 'Pasta',
+        price: 15,
+        category: 'Entree',
+        popularity: 9,
+        rating: 9.5,
+        tags: ['Italian', 'Tomato']
+    },
+    {
+        type: 'Ice Cream',
+        price: 5,
+        category: 'Dessert',
+        popularity: 12,
+        rating: 15,
+        tags: ['dairy', 'delicious']
+    }
+]
 
 
 
@@ -104,9 +145,13 @@
 */
 
 //CODE HERE
-
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+function filterByTag(food){
+    if (food.tags.includes('dairy')){
+        return food
+    }
+}
+let filteredFood = foodArr.filter(filterByTag)
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,6 +194,17 @@
 */
 
 //CODE HERE
+function filterByProperty(property, number, type) {
+    let filteredArr = []
+    filteredArr = foodArr.filter(function(food){
+        if (type === 'above'){
+            return food[property] > number
+        } else if (type === 'below'){
+            return food[property] < number
+        }
+    })
+    return filteredArr
+}
 
 
 /*
@@ -159,3 +215,5 @@
 */
 
 //CODE HERE
+let highPriced = filterByProperty('price', 10, 'above')
+console.log(highPriced)
