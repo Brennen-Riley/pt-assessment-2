@@ -131,6 +131,9 @@ const deals = [
 */
 
 //CODE HERE
+let copy = deals
+copy[0].title = copy[0].title.replace('15% Off!','10% Off!')
+console.log(copy)
 
 
 
@@ -148,3 +151,5 @@ const deals = [
 */
 
 //CODE HERE
+copy[1].desc = copy[1].desc.replace('March!' , 'April!')
+console.log(copy)
