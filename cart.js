@@ -35,7 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, item) => {
+    return acc + item.price
+}, 0)
+
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,6 +58,14 @@ const cart = [
 */
 
 //CODE HERE
+function calcFinalPrice(cartTotal, couponValue, tax){
+    const taxAmount = cartTotal * tax
+    const totalWithTax = cartTotal + taxAmount
+    const finalPrice = totalWithTax - couponValue
+    return finalPrice
+}
+const finalPrice = calcFinalPrice(26.97, 3, .07)
+console.log(finalPrice)
 
 
 
@@ -78,7 +90,15 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    TEXT ANSWER HERE:
+
+    Name: This would be a string and would have the clients name inside. This is a good way for the resteraunt to know who place an order.
+
+    Order: This property would be an array and would hold the list of items a customer ordered. This is important so the restaurant knows what the customer ordered.
+
+    Phone: This is a String property. This would hold the clients phone. This is important so the restaurant can call the customer if there are any problems with delivery or items becoming unavailable.
+
+    address: This property is an object that holds where the customer lives. We always need an address when we are delivering food. Also could be used to send out coupons and items like that.
 
 */
 
@@ -88,3 +108,9 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+    name: 'Brennen Riley',
+    order: ['Salad', 'Lasagna', 'Ice Cream'],
+    phone: '123-123-1234',
+    address: '1234 South Douglas Steet Salt Lake City, UT 84156'
+}
